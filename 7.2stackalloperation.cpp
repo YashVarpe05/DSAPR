@@ -2,6 +2,7 @@
 #include <cmath>
 #include <string>
 #include <cctype>
+#include <algorithm>
 using namespace std;
 
 // Stack Node
