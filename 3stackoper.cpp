@@ -152,3 +152,43 @@ int main() {
 
     return 0;
 }
+
+/*
+DATA STRUCTURES:
+   Node:
+      - data (character)
+      - next (pointer to Node)
+
+   Stack:
+      - top (pointer to Node)
+
+OPERATIONS:
+
+1. INITIALIZE_STACK
+   Set top = null
+
+2. PUSH(character x)
+   Create new Node temp
+   Set temp.data = x
+   Set temp.next = top
+   Set top = temp
+
+3. POP
+   IF stack is empty THEN
+      Return null character
+   Set x = top.data
+   Set temp = top
+   Move top to next node
+   Delete temp
+   Return x
+
+4. PEEK
+   IF stack is empty THEN
+      Return null character
+   ELSE
+      Return top.data
+
+5. IS_EMPTY
+   Return (top is null)
+
+*/

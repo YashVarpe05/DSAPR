@@ -121,3 +121,74 @@ int main() {
 
     return 0;
 }
+
+/*
+STRUCT Student:
+    INTEGER rollNo
+    STRING name
+    FLOAT sgpa
+
+FUNCTION bubbleSort(ARRAY students[], INTEGER n):
+    FOR i = 0 TO n - 1:
+        FOR j = 0 TO n - i - 2:
+            IF students[j].rollNo > students[j+1].rollNo THEN
+                SWAP students[j] WITH students[j+1]
+
+FUNCTION insertionSort(ARRAY students[], INTEGER n):
+    FOR i = 1 TO n - 1:
+        key = students[i]
+        j = i - 1
+        WHILE j >= 0 AND students[j].name > key.name:
+            students[j+1] = students[j]
+            j = j - 1
+        students[j+1] = key
+
+FUNCTION searchBySGPA(ARRAY students[], INTEGER n, FLOAT sgpa):
+    found = FALSE
+    FOR i = 0 TO n - 1:
+        IF students[i].sgpa == sgpa THEN
+            PRINT students[i].details
+            found = TRUE
+    IF NOT found:
+        PRINT "No student found with SGPA: sgpa"
+
+FUNCTION heapify(ARRAY arr[], INTEGER n, INTEGER i):
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
+    IF left < n AND arr[left] > arr[largest] THEN
+        largest = left
+    IF right < n AND arr[right] > arr[largest] THEN
+        largest = right
+    IF largest != i THEN
+        SWAP arr[i] WITH arr[largest]
+        heapify(arr, n, largest)
+
+FUNCTION heapSort(ARRAY arr[], INTEGER n):
+    FOR i = n / 2 - 1 DOWNTO 0:
+        heapify(arr, n, i)
+    FOR i = n - 1 DOWNTO 1:
+        SWAP arr[0] WITH arr[i]
+        heapify(arr, i, 0)
+
+MAIN:
+    DECLARE students[15] = { ... }  // Array of student objects
+    n = 15
+    PRINT "Original List"
+    PRINT each student details
+    CALL bubbleSort(students, n)
+    PRINT "Sorted by Roll No"
+    PRINT each student details
+    CALL insertionSort(students, n)
+    PRINT "Sorted by Name"
+    PRINT each student details
+    INPUT searchSgpa
+    CALL searchBySGPA(students, n, searchSgpa)
+
+    // Heap Sort Example
+    DECLARE arr[] = {15, 10, 20, 5, 30, 25}
+    CALL heapSort(arr, SIZE OF arr)
+    PRINT "Sorted Array using Heap Sort"
+    PRINT each element of arr
+
+*/
